@@ -1,7 +1,6 @@
 #ifndef CAFFE_TRIPLET_LOSS_LAYER_HPP_
 #define CAFFE_TRIPLET_LOSS_LAYER_HPP_
 
-
 #include <vector>
 
 #include "caffe/blob.hpp"
