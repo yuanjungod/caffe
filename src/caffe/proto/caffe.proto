@@ -420,6 +420,31 @@ message LayerParameter {
   optional ThresholdParameter threshold_param = 128;
   optional TileParameter tile_param = 138;
   optional WindowDataParameter window_data_param = 129;
+
+  // add triplet loss param
+  optional TripletLossParameter triplet_loss_param = 149;
+  optional NormalizationParameter normalization_param = 150;
+}
+
+// add triplet loss param
+message TripletLossParameter {
+    optional float alpha = 1 [default = 1.1]; // to be tuned
+    // optional double beta = 2 [default = 0.5]; // to be tuned
+    optional int32 separate = 3 [default = 10000];
+    // label separate to distiguish the random sampled examples
+    // should change according to the mini_batch
+    optional int32 ids_per_batch = 4 [default = 20];
+    optional int32 num_per_id = 5 [default = 20];
+}
+
+// add normalization param
+message NormalizationParameter {
+    enum Norm {
+      L1 = 1;
+      L2 = 2;
+    }
+    // Specify the Norm to use L1 or L2
+    optional Norm norm = 1 [default = L2];
 }
 
 // Message that stores parameters used to apply transformation
