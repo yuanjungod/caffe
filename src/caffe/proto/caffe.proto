@@ -1354,6 +1354,10 @@ message V1LayerParameter {
   optional TransformationParameter transform_param = 36;
   optional LossParameter loss_param = 42;
   optional V0LayerParameter layer = 1;
+
+  // add triplet loss param
+  optional TripletLossParameter triplet_loss_param = 43;
+  optional NormalizationParameter normalization_param = 44;
 }
 
 // DEPRECATED: V0LayerParameter is the old way of specifying layer parameters
